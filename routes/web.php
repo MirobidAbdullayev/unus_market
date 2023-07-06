@@ -14,7 +14,7 @@ use App\Http\Controllers\HomeController;
 | contains the "web" middleware group. Now create something great!
 |
 */
-
+Route::get('/',[Homecontroller::class, 'store']);
 Route::group(['middleware'=>'guest'],function(){
     Route::get('login',[HomeController::class,'index'])->name('login');
     Route::post('login',[HomeController::class,'login'])->name('login')->middleware('throttle:2,1');
